@@ -8,9 +8,10 @@ import { CategoriasService } from './services/categorias.service';
 import { InserirCategoriaComponent } from './inserir-categoria/inserir-categoria.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditarCategoriaComponent } from './editar-categoria/editar-categoria.component';
+import { ExcluirCategoriaComponent } from './excluir-categoria/excluir-categoria.component';
 
 @NgModule({
-  declarations: [ListarCategoriasComponent, InserirCategoriaComponent, EditarCategoriaComponent],
+  declarations: [ListarCategoriasComponent, InserirCategoriaComponent, EditarCategoriaComponent, ExcluirCategoriaComponent],
   imports: [
     CommonModule,
     CategoriasRoutingModule,

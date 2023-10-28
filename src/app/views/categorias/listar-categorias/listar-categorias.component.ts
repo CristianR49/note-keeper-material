@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Categoria } from '../models/categoria';
-import { CategoriasService } from '../services/categorias.service';
 import { ActivatedRoute } from '@angular/router';
+import { NotificationService } from 'src/app/core/notification/services/notification.service';
 
 @Component({
   selector: 'app-listar-categorias',
@@ -12,9 +12,11 @@ import { ActivatedRoute } from '@angular/router';
 export class ListarCategoriasComponent implements OnInit {
   categorias$?: Observable<Categoria[]>;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private notification: NotificationService) {}
 
   ngOnInit(): void {
-    this.categorias$ = this.route.data.pipe(map(dados => dados['categorias']))
+    this.categorias$ = this.route.data.pipe(map(dados => dados['categorias']));
+
+    this.notification.sucesso('Categorias obtidas com sucesso!');
   }
 }
